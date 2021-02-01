@@ -17,10 +17,14 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
   }else{
     $message = "You must $user with this email $userEmail and this password $userPass";
     $url= 'index.php';
-    echo "<script>
+    /* echo "<script>
     alert('$message');
     window.location= '$url'
+    </script>"; */
+    echo "<script>
+    alert('$message');
     </script>";
+    header("Refresh: 0.5; URL=$url");
   }
   exit();
   }
